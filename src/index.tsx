@@ -106,8 +106,8 @@ ReactDOM.render(
           />
         }
       />
+      <p className="coming-soon">Updates coming soon!</p>
     </div>
-    <p className="tagline">Updates coming soon...</p>
     <GenerateRainbow
       totalColors={20}
     />      
