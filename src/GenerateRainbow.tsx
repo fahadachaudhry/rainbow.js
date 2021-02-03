@@ -15,8 +15,8 @@ const GenerateRainbow = (props:IGenerateRainbowProps) => {
   } = props;
 
   const colors = [];
-  for (let i = 0; i < totalColors; i+=1) {
-    const color = "hsl(" + (360 * i / totalColors) + ",100%,50%)";
+  for (let i = 0; i < totalColors!; i+=1) {
+    const color = "hsl(" + (360 * i / totalColors!) + ",100%,50%)";
     colors.push(color);
   }
 
