@@ -6,7 +6,7 @@ interface IGenerateRainbowProps {
   containerWidth?: string;
 } 
 
-const GenerateRainbow = (props:any) => {
+const GenerateRainbow = (props:IGenerateRainbowProps) => {
   const {totalColors, 
     boxHeight, 
     boxWidth,
