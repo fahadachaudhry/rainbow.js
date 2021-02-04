@@ -1,0 +1,71 @@
+$primary: #eb3434;
+$secondary: #0f0f0f;
+$background: #ffffff;
+
+@import "~bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+@import "./body-background.scss";
+
+// $primary: #eb3434;
+// $secondary: #FFFFFF;
+// $background: #2b2b2b;
+
+.header {
+  text-align: center;
+  padding: 40px;
+  .heading {
+    font-family: "Courgette", cursive;
+    color: $primary;
+  }
+  .tagline {
+    // font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    color: $secondary;
+  }
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  color: $primary;
+  font-family: "Courgette", cursive;
+}
+p {
+  font-family: "Raleway", sans-serif;
+  color: $secondary;
+}
+
+.info-container {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: $background;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.info-block {
+  padding: 40px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  margin: 0px;
+}
+
+.rainbow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

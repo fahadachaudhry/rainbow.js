@@ -1,60 +1,33 @@
-import React  from 'react';
+// eslint-disable-next-line no-use-before-define
+import React from 'react';
 import ReactDOM from 'react-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
-import './App.scss';
+import './styles/App.scss';
 import GenerateRainbow from './GenerateRainbow';
+import InfoBlocks from './components/view/InfoBlocks';
 
 /// ///////////////////////////////////////////////
 
-interface IInfoBlocks{
-  heading:string; 
-  text:string; 
-  syntax:string;
-  component:any;
-}
-
-const InfoBlocks = (props:IInfoBlocks) => {
-  const {
-    heading,
-    text,
-    syntax,
-    component,
-  } = props;
-  return (
-    <div className="info-block">
-    <div className="flex-50">
-      <h2 className="h1">
-        {heading}
-      </h2>
-      <p>
-        {text}
-      </p>
-      <pre>
-        <code className="language-js">
-        {syntax}
-        </code>
-      </pre>
-    </div>
-    <div className="flex-50">
-    {component}
-    </div>
-  </div>
-  );
-};
-
 ReactDOM.render(
   <React.StrictMode>
-    <GenerateRainbow
-      totalColors={20}
-    />
-    <div className="header">
-      <h1 className="heading">RainbowJS</h1>
-      <p className="tagline">A dead-simple rainbox generator made with React</p>
-    </div>
-    <GenerateRainbow
-      totalColors={20}
-    />
-    <div className="info-container">
+    <Container fluid className="p-0 overflow-hidden">
+      <Row>
+        <Col>
+          <GenerateRainbow
+            totalColors={20}
+          />
+          <div className="header">
+            <h1 className="heading">RainbowJS</h1>
+            <p className="tagline">A dead-simple rainbox generator made with React</p>
+          </div>
+          <GenerateRainbow
+            totalColors={20}
+          />
+        </Col>
+      </Row>
+    </Container>
+    <Container className="info-container">
       <InfoBlocks
         heading="Basic Syntax"
         text="This is how you do it!"
@@ -63,9 +36,11 @@ ReactDOM.render(
         totalColors={20}
       />        
         `}
-        component={      <GenerateRainbow
-          totalColors={20}
-          />}
+        component={(
+          <GenerateRainbow
+            totalColors={20}
+          />
+        )}
       />
       <InfoBlocks
         heading="Customize"
@@ -77,12 +52,13 @@ ReactDOM.render(
         boxWidth="20px"
       />      
         `}
-        component={      
-        <GenerateRainbow
-          totalColors={20}
-          boxHeight="50px"
-          boxWidth="20px"
-          />}
+        component={(
+          <GenerateRainbow
+            totalColors={20}
+            boxHeight="50px"
+            boxWidth="20px"
+          />
+        )}
       />
       <InfoBlocks
         heading="Customize Container"
@@ -96,21 +72,25 @@ ReactDOM.render(
         containerWidth="100px"
       />    
         `}
-        component={      
-        <GenerateRainbow
-          totalColors={7}
-          boxHeight="50px"
-          boxWidth="20px"
-          containerHeight="100px"
-          containerWidth="100px"
+        component={(
+          <GenerateRainbow
+            totalColors={7}
+            boxHeight="50px"
+            boxWidth="20px"
+            // containerHeight="100px"
+            // containerWidth="100px"
           />
-        }
+        )}
       />
-      <p className="coming-soon">Updates coming soon!</p>
-    </div>
+      <Row>
+        <Col>
+          <p className="coming-soon">Updates coming soon!</p>
+        </Col>
+      </Row>
+    </Container>
     <GenerateRainbow
       totalColors={20}
-    />      
+    />
   </React.StrictMode>,
   document.getElementById('root'),
 );

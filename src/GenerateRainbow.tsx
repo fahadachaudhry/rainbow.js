@@ -1,50 +1,55 @@
+// eslint-disable-next-line no-use-before-define
+import React from 'react';
+
 interface IGenerateRainbowProps {
   totalColors?: number;
   boxHeight?: string;
   boxWidth?: string;
-  containerHeight?: string;
-  containerWidth?: string;
-} 
+  // containerHeight?: string;
+  // containerWidth?: string;
+}
 
 const GenerateRainbow = (props:IGenerateRainbowProps) => {
-  const {totalColors, 
-    boxHeight, 
+  const {
+    totalColors,
+    boxHeight,
     boxWidth,
-    containerHeight,
-    containerWidth  ,
+    // containerHeight,
+    // containerWidth,
   } = props;
 
   const colors = [];
-  for (let i = 0; i < totalColors!; i+=1) {
-    const color = "hsl(" + (360 * i / totalColors!) + ",100%,50%)";
+  for (let i = 0; i < totalColors!; i += 1) {
+    const color = `hsl(${(360 * i) / totalColors!},100%,50%)`;
     colors.push(color);
   }
 
   const styles = {
     height: boxHeight,
-    width: boxWidth
-  }
+    width: boxWidth,
+  };
 
   return (
-    <div style={{width: containerWidth, height: containerHeight}}>
+    <div>
+      {/* style={{ width: containerWidth, height: containerHeight }} */}
       <div className="rainbow-container">
-      {
-        colors.map((item) => (
-          <span style={{ ...styles, backgroundColor: `${item}`}} />
+        {
+          colors.map((item, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <span key={index} style={{ ...styles, backgroundColor: `${item}` }} />
           ))
         }
-        </div>
+      </div>
     </div>
   );
-
-}
+};
 
 GenerateRainbow.defaultProps = {
   totalColors: 7,
   boxHeight: '10px',
   boxWidth: '10%',
-  containerHeight: "100%",
-  containerWidth: "100%",  
-}
+  // containerHeight: '100%',
+  // containerWidth: '100%',
+};
 
 export default GenerateRainbow;
