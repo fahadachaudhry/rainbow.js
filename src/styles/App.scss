@@ -1,10 +1,10 @@
-$primary: #eb3434;
-$secondary: #0f0f0f;
-$background: #ffffff;
+$primary: #f4e0f1;
+$secondary: #ffffff;
+$background: #2F263C;
 
 @import "~bootstrap/scss/bootstrap";
 
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 @import "./body-background.scss";
@@ -13,18 +13,28 @@ $background: #ffffff;
 // $secondary: #FFFFFF;
 // $background: #2b2b2b;
 
+body, html{
+  background-color: $background;
+  color: #d2cbe4;
+}
+
 .header {
   text-align: center;
   padding: 40px;
   .heading {
-    font-family: "Courgette", cursive;
-    color: $primary;
+    font-family: 'Luckiest Guy', cursive;
+    color: #ff6b81;
   }
   .tagline {
     // font-weight: bold;
     font-family: "Raleway", sans-serif;
     color: $secondary;
   }
+}
+
+.highlight{
+  color: #ff6b81;
+  font-weight: bold;
 }
 
 h6,
@@ -34,18 +44,31 @@ h3,
 h2,
 h1 {
   color: $primary;
-  font-family: "Courgette", cursive;
+  font-family: 'Luckiest Guy', cursive;
 }
 p {
   font-family: "Raleway", sans-serif;
   color: $secondary;
+  font-size: 18px;
+
+}
+a{
+  color: #ffe69d;
+  text-decoration: underline;
+  text-decoration-color: #857b5e;
+  font-size: 18px;
+
+  &:hover{
+    color: #ffe69d;
+    text-decoration: underline;
+    text-decoration-color: #ffe69d;
+  }
 }
 
 .info-container {
-  margin-top: 0px;
+  margin-top: 150px;
   margin-bottom: 0px;
   background-color: $background;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -54,7 +77,8 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .coming-soon {
@@ -62,6 +86,25 @@ p {
   font-family: "Raleway", sans-serif;
   padding: 20px;
   margin: 0px;
+}
+
+.component-showcase{
+  background-color: #281E36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px dashed #ff6b81;
+  border-spacing: 10px;
+}
+
+.info-block-col-min-height{
+  min-height: 320px !important;
+}
+
+.section{
+  padding: 100px;
+  text-align: center;
 }
 
 .rainbow-container {

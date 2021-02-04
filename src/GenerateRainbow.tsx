@@ -5,8 +5,8 @@ interface IGenerateRainbowProps {
   totalColors?: number;
   boxHeight?: string;
   boxWidth?: string;
-  // containerHeight?: string;
-  // containerWidth?: string;
+  containerHeight?: string;
+  containerWidth?: string;
 }
 
 const GenerateRainbow = (props:IGenerateRainbowProps) => {
@@ -14,8 +14,8 @@ const GenerateRainbow = (props:IGenerateRainbowProps) => {
     totalColors,
     boxHeight,
     boxWidth,
-    // containerHeight,
-    // containerWidth,
+    containerHeight,
+    containerWidth,
   } = props;
 
   const colors = [];
@@ -30,8 +30,9 @@ const GenerateRainbow = (props:IGenerateRainbowProps) => {
   };
 
   return (
-    <div>
-      {/* style={{ width: containerWidth, height: containerHeight }} */}
+    <div
+      style={{ width: containerWidth, height: containerHeight }}
+    >
       <div className="rainbow-container">
         {
           colors.map((item, index) => (
@@ -47,9 +48,9 @@ const GenerateRainbow = (props:IGenerateRainbowProps) => {
 GenerateRainbow.defaultProps = {
   totalColors: 7,
   boxHeight: '10px',
-  boxWidth: '10%',
-  // containerHeight: '100%',
-  // containerWidth: '100%',
+  boxWidth: '10px',
+  containerHeight: undefined,
+  containerWidth: undefined,
 };
 
 export default GenerateRainbow;
